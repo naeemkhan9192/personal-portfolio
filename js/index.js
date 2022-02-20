@@ -41,9 +41,11 @@ window.addEventListener('scroll', (e) => {
     // class="scroll-up"
     if (scrolly > 508) {
         scrollUp.classList.add('scroll-up');
+        scrollUp.style.display = "block";
     }
     else {
-        scrollUp.classList.remove('scroll-up')
+        scrollUp.classList.remove('scroll-up');
+        scrollUp.style.display = "none";
     }
 
 });
@@ -103,11 +105,9 @@ searchBtn.addEventListener('click', ()=>{
 
 function searchFunc() {
     let inputVal = searchInput.value.toLowerCase();
-    console.log(inputVal)
     let cards = document.getElementsByClassName('cards');
     Array.from(cards).forEach(function (element) {
         let cardsTxt = element.getElementsByTagName('p')[0].innerText;
-        console.log(cardsTxt);
         if (cardsTxt.includes(inputVal)) {
             element.style.display = 'block';
         }
