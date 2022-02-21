@@ -1,14 +1,12 @@
-// console.log('Personal porfolio Site');
+let navbar = document.querySelector('.navbar');
 
-// setting the date for the Copy Right
-
+// setting the date for the Copy Rights
 let date = document.querySelector('.date');
 let upDate = new Date().getFullYear();
 date.innerHTML = upDate
 
 // Takin the size of the page
 window.addEventListener('DOMContentLoaded', () => {
-    // console.log('Hello');
     let pageWidth = window.innerWidth;
     if (pageWidth <= 896) {
         navDisplayNone();
@@ -24,30 +22,21 @@ window.addEventListener('DOMContentLoaded', () => {
 // Scroll Behaviour
 
 let scrollUp = document.querySelector('.scroll');
-// console.log(scrollUp);
 
 window.addEventListener('scroll', (e) => {
-    // console.log('Event fired');
     let scrolly = pageYOffset;
-    // console.log(scrolly);
-    let navbar = document.querySelector('.navbar');
-    // 77
-    if (scrolly > 21) {
-        navbar.style.backgroundColor = 'hsl(205deg 86% 17% / 32%)';
-    }
-    else {
-        navbar.style.backgroundColor = 'var(--clr-primary-1)';
-    }
-    // class="scroll-up"
-    if (scrolly > 508) {
+    if (scrolly > 403) {
         scrollUp.classList.add('scroll-up');
         scrollUp.style.display = "block";
+        navbar.style.backgroundColor = 'hsl(205deg 86% 17% / 32%)';
     }
     else {
         scrollUp.classList.remove('scroll-up');
         scrollUp.style.display = "none";
-    }
+        navbar.style.backgroundColor = 'var(--clr-primary-1)';
 
+    }
+    
 });
 
 /*================================================================
@@ -60,8 +49,7 @@ let navMenu = document.querySelector('.span');
 let navElementContainer = document.querySelector('.navbar-elem-container');
 
 navMenu.addEventListener('click', () => {
-    // console.log('NAV MENU');
-
+    
     if (navElementContainer.style.display == 'none') {
         navDisplayBlock();
     } else {
@@ -80,7 +68,7 @@ function navDisplayBlock() {
     navElementContainer.style.display = 'block';
     document.querySelector('.navbar').style.height = 'auto';
     document.querySelector('.span').innerHTML = '&Cross;';
-
+    navbar.style.backgroundColor = 'var(--clr-primary-1)';
 }
 /*================================================================
 ******************************************************************
